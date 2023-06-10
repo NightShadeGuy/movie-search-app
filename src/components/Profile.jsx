@@ -21,15 +21,13 @@ export default function Profile(navProps) {
         const profileContainer = document.querySelector(".option");
         const sidebar = document.querySelector(".sidebar--container");
 
-       // !profileContainer.classList.contains("lightMode")
-
         if(!navProps.formData.darkMode) {
             navbar.classList.add("lightMode");
-             profileContainer.classList.add("lightMode"); 
+            profileContainer.classList.add("lightMode"); 
             sidebar.classList.add("lightMode");       
         } else {
             navbar.classList.remove("lightMode");
-             profileContainer.classList.remove("lightMode"); 
+            profileContainer.classList.remove("lightMode"); 
             sidebar.classList.remove("lightMode");
         }      
     }

@@ -14,18 +14,19 @@ export default function App() {
         password: "",
         isRemember: false,
         successFullyLogin: false,
-        darkMode: false
+        darkMode: JSON.parse(localStorage.getItem('darkMode'))
     }
 );
 
   const defaultVal = search.length > 0 ? search : "Dragon ball super";
 
+  /* 
     useEffect(() => {
     const url = `https://imdb8.p.rapidapi.com/auto-complete?q=${defaultVal}`;
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': 'You should put your  RapidAPI-Key here',
+        'X-RapidAPI-Key': '', //  <- You should put your RapidAPI-Key inside this line in-order to run
         'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
       }
     };
@@ -38,7 +39,12 @@ export default function App() {
     }  
 
     getApi(); 
-  }, [search])          
+  }, [search])
+  */
+  
+  useEffect(() => {
+      localStorage.setItem('darkMode', JSON.stringify(formData.darkMode));
+  }, [formData.darkMode])
  
 
   function handleChange(event) { 

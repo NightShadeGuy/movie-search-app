@@ -10,6 +10,11 @@ export default function Navbar(props) {
     setShow(prevVal => !prevVal); 
   }
 
+
+  const foregroundColor = {
+    color: props.formData.darkMode ? "black" : ""
+  }
+
     return(
         <nav className="navbar">
             <h1 className="nav--title">PopVid</h1>
@@ -33,8 +38,8 @@ export default function Navbar(props) {
             {
               !props.formData.successFullyLogin &&
               <div className="nav--login" onClick={props.handleLogin}>
-                  <i className="fa-solid fa-user" style={{color: props.formData.darkMode ? "black" : "" }}></i>
-                  <h2 className="login" style={{color: props.formData.darkMode ? "black" : "" }}>Login</h2>
+                  <i className="fa-solid fa-user" style={foregroundColor}></i>
+                  <h2 className="login" style={foregroundColor}>Login</h2>
               </div>
             }
             
